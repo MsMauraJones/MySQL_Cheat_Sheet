@@ -39,31 +39,31 @@ After a new user has been created, you will need to determine what permissions t
 
 ## PRIVILEGES
 
-### 1. Grant all permissions:
+### 1. Grant all permissions
 This is equivalent to root so use with caution
   ```
   GRANT ALL PRIVILEGES ON * . * TO 'new_user'@'localhost';
   ```
 
-### 2. Grant specific permissions:
+### 2. Grant specific permissions
   ```
   GRANT ALL PRIVILEGES ON 'database_name'.* TO 'user_name'@'localhost'.      
 
   GRANT CREATE, SELECT ON * . * TO 'user_name'@'localhost';
   ```  
 
-### 3. Show privileges - specifc user:
+### 3. Show privileges - specifc user
 It is easiest to review the privileges for all users through phpAdmin or Workbench
   ```
   SHOW GRANTS FOR 'web'@'localhost';
   ```
 
-### 4. Removing all privileges from a user:
+### 4. Removing all privileges from a user
   ```
   REVOKE ALL PRIVILEGES ON * . * FROM 'new_user'@'localhost';
   ```  
 
-### 5. Removing specific privileges from a user: 
+### 5. Removing specific privileges from a user
   ```
   REVOKE CREATE, SELECT ON database_name.table_name FROM ‘user_name’@‘localhost’;
   ```
@@ -71,22 +71,22 @@ It is easiest to review the privileges for all users through phpAdmin or Workben
 
 ## DATABASES
 
-### 1. Display all databases:
+### 1. Display all databases
   ```
   SHOW DATABASES;
   ```  
 
-### 2. Delete a specific database:
+### 2. Delete a specific database
   ```
   DROP DATABASE database_name;
   ```
   
-### 3. Create a new database:
+### 3. Create a new database
   ```
   CREATE DATABASE database_name;
   ```
   
-### 4. Select a database to use: 
+### 4. Select a database to use
 After a database has been created, you need to confirm that you wish to use that specific database for subsequent operations.  
   ```
   USE database_name;
@@ -96,7 +96,7 @@ After a database has been created, you need to confirm that you wish to use that
 
 Tables hold the data inside a database. You need to have selected the database first before you can proceed. 
 
-### 1. Create a new table:
+### 1. Create a new table
 
 At the most basic structure, a table has at least one column with a specific data constraint, as below: 
 
@@ -304,14 +304,14 @@ To select records with a numeric value that falls within a certain range
   SELECT * FROM table_name WHERE columnName BETWEEN value1 AND value2;
   ```
   
-### 5. Operators for Text Fields - Equal
+### 5. Operators for Text Fields - Equal(=)
 
 To select an exact text match (remember to use single quotes around the values)
   ```
   SELECT * FROM table_name WHERE columnName = 'exactText';
   ```
   
-### 6. Operators for Text Fields - Between
+### 6. Operators for Text Fields - BETWEEN
 
 To select the records in an alphabetical range use the following syntax:
   ```
@@ -354,7 +354,7 @@ The IN operator can also allow for further filtering with a select statement
   SELECT * FROM table_name WHERE columnName IN (SELECT columnName FROM table_name);
   ```  
   
-### 9. ORDER BY
+### 9. ORDER BY Clause
 
 Adding this clause to a SELECT statement allows control over if the results are presented in ascending or descending order
   ```
@@ -367,21 +367,24 @@ Adding this clause to a SELECT statement allows control over if the results are 
   SELECT * FROM tableName ORDER BY columnName1 ASC, columnName2 DESC; // Multicolumn
   ```
   
-### 10. DISTINCT
+### 10. DISTINCT Clause
 
 This clause removes duplicate values from the results of the SELECT statement
   ```
   SELECT DISTINCT columnName FROM tableName;
   ```  
    
-### 11. CONCAT 
+### 11. CONCAT Clause
 
 This clause adds two or more expressions together for the results. 
+
+The " " adds space between for readability if needed.
+
   ```
-  SELECT CONCAT (columnA, " ", columnB, " ", columnC) AS newColumn FROM tableName; //the " " adds space between for readability if needed
+  SELECT CONCAT (columnA, " ", columnB, " ", columnC) AS newColumn FROM tableName;
   ```
 
-### 12 INNER JOIN
+### 12 INNER JOIN Clause
 
 This clause displays results with the same value in related columns
   ```
