@@ -144,7 +144,7 @@ Constraints allow you to set up additional rules for data that can be different 
 
 ### 2.2: Primary Key
 
-A primary key is a column (or columns) that can uniquely identify each row in a table. By definition, each value must be unique in the column and cannot contain NULL.
+A primary key is a column (or columns) that can uniquely identify each row in a table. By definition, each value must be unique in the column and cannot contain NULL. It should also remain the same, instead of changing regularly (like an address)
 
 Example: Parent Table
   ```
